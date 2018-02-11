@@ -1,1 +1,13 @@
-h1.alpha Hi there!
+- content_for(:head)
+  == dato_meta_tags(dato.home_page)
+
+.wrap
+  = image_tag "images/logo.jpg"
+  h1.alpha = dato.home_page.title
+  article.formatted-content = dato.home_page.main_content
+
+  section
+    = link_to "#", class: "widget" do
+      h4.widget__title  Impegno etico
+      article = dato.home_page.ethic_widget_text
+

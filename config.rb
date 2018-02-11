@@ -10,7 +10,7 @@ activate :asset_hash
 activate :directory_indexes
 activate :pagination
 activate :inline_svg
-activate :dato, token: ENV.fetch('DATO_API_TOKEN'), live_reload: false
+activate :dato, token: ENV.fetch('DATO_API_TOKEN'), live_reload: true
 
 activate :external_pipeline,
   name: :webpack,
