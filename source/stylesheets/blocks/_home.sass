@@ -1,0 +1,47 @@
+.home
+  display: block
+  height: 100%
+
+  +at-breakpoint(lap)
+    display: flex
+
+.home__item
+  flex: 1
+  +padding(3)
+
+.home__item--left
+  @extend .home__item
+  display: flex
+  flex-direction: column
+  background-color: $primary-color
+  justify-content: center
+  align-items: center
+  text-align: center
+
+  color: $white-color
+
+  +at-breakpoint(wall)
+    max-width: 50%
+
+.home__item--right
+  @extend .home__item
+  align-self: center
+
+  +at-breakpoint(wall)
+    max-width: 650px
+
+
+.home__title
+  +heading-font-family
+  +font-size(huge)
+
+.home__title__tagline
+  +heading-font-family
+  +font-size(alpha)
+
+.home__logo
+  +margin-bottom(2)
+
+.home__content
+  +vertical-margin(2)
+
