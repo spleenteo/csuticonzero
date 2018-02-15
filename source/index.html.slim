@@ -5,14 +5,19 @@
   .home__item--left
     h1.home__title = dato.home_page.title
     p.home__title__tagline = dato.home_page.tagline
+
+    .space--top-3
+      a.button--rev.button--small href="http://it.humanipedia.org/index.php" target="_blank " Humanipedia
+      a.button--rev.button--small href="https://www.humanistforum.org/" target="_blank " Forum Umanista 2018
+
   .home__item--right
     .home__logo = image_tag "images/logo.jpg"
     article.home__content
       .formatted-content
         = dato.home_page.main_content
 
-  / section
-  /   = link_to "#", class: "widget" do
-  /     h4.widget__title  Impegno etico
-  /     article = dato.home_page.ethic_widget_text
+    / section
+    /   = link_to "#", class: "widget" do
+    /     h4.widget__title  Impegno etico
+    /     article = dato.home_page.ethic_widget_text
 
