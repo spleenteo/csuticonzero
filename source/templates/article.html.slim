@@ -4,7 +4,6 @@
   = image_tag article.featured_image.file.width(800).format('pjpg').to_url if article.featured_image.present?
 
   .formatted-content.space--top-3
-    - article.content.each do |p|
-      = p.
+    = article.content
 
 
