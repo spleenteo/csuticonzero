@@ -35,6 +35,16 @@ end
 
 proxy "/_redirects", "/templates/redirects.txt"
 
+
+dato.news.each do |article|
+  proxy(
+    "/news/#{article.slug}/index.html",
+    '/templates/article.html',
+    locals: { article: article }
+  )
+end
+
+
 # dato.tap do |dato|
 #   dato.articles.each do |article|
 #     proxy(

@@ -12,9 +12,24 @@
 
   .home__item--right
     .home__logo = image_tag "images/logo.jpg"
+
+    - news = dato.news.first
+
+
+
     article.home__content
       .formatted-content
-        = dato.home_page.main_content
+        h1 = news.title
+        = image_tag news.featured_image.file.width(800).format('pjpg').to_url if news.featured_image.present?
+        p = news.abstract
+
+      .space--both-2 = link_to "Leggi", "/news/#{news.slug}", class: "button--primary"
+
+
+        / = dato.home_page.main_content
+
+        / = dato.home_page.ethic_widget_text
+
 
     / section
     /   = link_to "#", class: "widget" do
