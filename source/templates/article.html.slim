@@ -17,6 +17,12 @@
       - if block.item_type.api_key == "video"
         iframe width="100%" height="400px" src=block.url.url frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"
 
+      - if block.item_type.api_key == "image"
+        figure.space--both-2
+          = image_tag block.image.file.width(800).format('pjpg').to_url
+
+      - if block.item_type.api_key == "doc"
+        p.space--both-2 = link_to "Documento #{block.doc.name}", block.doc.file.url
 
 
 
