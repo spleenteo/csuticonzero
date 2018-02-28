@@ -1,9 +1,22 @@
 .wrap
-  h1.alpha = article.title
+  .space--bottom-3
+    h1.alpha = article.title
+    - a = article.author.present? ? "da #{article.author}" : ""
+    - d = article.created_at.strftime("%d-%m-%Y")
+    p = "Creato il #{d} #{a}"
 
-  = image_tag article.featured_image.file.width(800).format('pjpg').to_url if article.featured_image.present?
+  - if article.featured_image.present?
+    .space--bottom-3
+      = image_tag article.featured_image.file.width(800).format('pjpg').to_url
 
-  .formatted-content.space--top-3
-    = article.content
+  article.space--top-3.formatted-content
+    - article.content.each do |block|
+      - if block.item_type.api_key == "paragraph"
+        div = block.body
+
+      - if block.item_type.api_key == "video"
+        iframe width="100%" height="400px" src=block.url.url frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"
+
+
 
 
